@@ -1,0 +1,20 @@
+1 - Não se esqueça do ";" no final das querys.
+2 - Entrar no mysql instalado na maquina:
+    mysql -uroot -p;
+3 - Criar e acessa o banco de dados:
+    CREATE DATABASE controle_compras;
+    use controle_compras;
+4 - Criar uma tabela:
+    CREATE TABLE compras (id INT AUTO_INCREMENT PRIMARY KEY, valor DOUBLE, data DATE, observacoes VARCHAR(255), recebido BOOLEAN);
+5 - Inserir na tabela compras:
+    INSERT INTO compras (valor, data, observacoes, recebido) VALUES (100.0, '2007-05-12', 'Compras de Maio', 1);
+6 - Busca todo o conteudo da tabela:
+    SELECT * FROM compras;
+7 - Pega as instuções SQL no arquivo e executa no banco de dados;
+    mysql -uroot -p controle_compras < cap2.sql;
+8 - Busca a coluna "valor", "valor" multiplicando por 3 e dando um apelido:
+    SELECT valor, valor * 3 AS triplo FROM compras;
+9 - Consulta com filtro:
+    SELECT * FROM compras WHERE (valor > 1000 AND data <= '2017-01-01') OR valor <> 1000;
+10 - Consulta fitrando por uma parte da String:
+    SELECT * FROM compras WHERE observacoes LIKE 'compras%';
