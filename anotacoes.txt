@@ -20,3 +20,4 @@
     SELECT * FROM compras WHERE observacoes LIKE 'compras%';
 11 - Para importar SQLs deslogue do MySQL e execute:
     mysql -u root -p controle_compras < cap2.sql
+12 - Pode usar aspas duplas no lugar de aspas simples.
