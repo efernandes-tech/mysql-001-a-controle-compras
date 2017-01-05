@@ -1,6 +1,6 @@
 1 - Não se esqueça do ";" no final das querys.
 2 - Entrar no mysql instalado na maquina:
-    mysql -uroot -p;
+    mysql -u root -p;
 3 - Criar e acessa o banco de dados:
     CREATE DATABASE controle_compras;
     use controle_compras;
@@ -18,3 +18,5 @@
     SELECT * FROM compras WHERE (valor > 1000 AND data <= '2017-01-01') OR valor <> 1000;
 10 - Consulta fitrando por uma parte da String:
     SELECT * FROM compras WHERE observacoes LIKE 'compras%';
+11 - Para importar SQLs deslogue do MySQL e execute:
+    mysql -u root -p controle_compras < cap2.sql
