@@ -21,3 +21,12 @@
 11 - Para importar SQLs deslogue do MySQL e execute:
     mysql -u root -p controle_compras < cap2.sql
 12 - Pode usar aspas duplas no lugar de aspas simples.
+13 - O BETWEEN serve para filtrar de acordo com um intervalo (int ou data).
+    SELECT * FROM compras WHERE valor BETWEEN 200 AND 700
+14 - Comando usado para alterar dados, e o comando NOT para negar condição fazendo pegar o contrario.
+    UPDATE compras SET observacoes = 'compra emergencial', recebido = 0 WHERE id = 2 OR data NOT BETWEEN '2010-01-05' AND '2010-06-25';
+15 - Pegando varios valores para um mesmo campo com IN.
+    UPDATE compras SET observacoes = 'datas festivas' WHERE DATA IN('2017-12-25', '2017-10-12', '2017-06-12');
+16 - Excluir registros antes de 2009.
+    DELETE FROM compras WHERE DATA < '2009-01-01';
+17 - Sempre faça um SELECT para testar o WHERE antes de usar o UPDATE ou DELETE.
