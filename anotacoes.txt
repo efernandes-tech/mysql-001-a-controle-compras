@@ -30,3 +30,11 @@
 16 - Excluir registros antes de 2009.
     DELETE FROM compras WHERE DATA < '2009-01-01';
 17 - Sempre faça um SELECT para testar o WHERE antes de usar o UPDATE ou DELETE.
+18 - Fazer um coluna da tabela começar a recusar NULL.
+    ALTER TABLE compras MODIFY COLUMN observacoes TEXT NOT NULL;
+19 - Adicionar um valor padrão para uma coluna da tabela.
+    ALTER TABLE compras MODIFY COLUMN recebido TINYINT(1) DEFAULT '0';
+20 - Para definir valores especificos que uma coluna pode resceber vc pode usar o ENUM().
+    ALTER TABLE compras ADD COLUMN forma_pagt ENUM('cartao', 'boleto', 'dinheiro');
+21 - O comando CHANGE pode ser usado para renomear uma coluna.
+    ALTER TABLE compras CHANGE forma_pagt forma_pagamento ENUM('CARTAO', 'BOLETO', 'DINHEIRO');
