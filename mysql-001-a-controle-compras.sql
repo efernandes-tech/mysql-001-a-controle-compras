@@ -18,6 +18,22 @@ USE `controle_compras`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `compradores`
+--
+
+DROP TABLE IF EXISTS `compradores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `compradores` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `NOME` varchar(100) NOT NULL,
+  `ENDERECO` varchar(100) NOT NULL,
+  `TELEFONE` varchar(20) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `compras`
 --
 
@@ -28,10 +44,14 @@ CREATE TABLE `compras` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `valor` double DEFAULT NULL,
   `data` date DEFAULT NULL,
-  `observacoes` varchar(255) DEFAULT NULL,
-  `recebido` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+  `OBSERVACOES` text NOT NULL,
+  `recebido` tinyint(1) DEFAULT '0',
+  `forma_pagamento` enum('CARTAO','BOLETO','DINHEIRO') DEFAULT NULL,
+  `COMPRADOR_ID` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `COMPRADOR_ID` (`COMPRADOR_ID`),
+  CONSTRAINT `compras_ibfk_1` FOREIGN KEY (`COMPRADOR_ID`) REFERENCES `compradores` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -43,4 +63,4 @@ CREATE TABLE `compras` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-05 22:22:52
+-- Dump completed on 2017-01-14  0:13:36
