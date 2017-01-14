@@ -49,3 +49,8 @@
     SELECT COUNT(valor) FROM compras;
 27 - Para pegar o mes ou o ano de uma data.
     SELECT month(data), year(data) FROM compras;
+28 - Use o JOIN para fazer uma junção dos dados de tabelas diferentes que tem relação entre si usando FKs.
+    SELECT * FROM compras JOIN compradores ON compras.comprador_id = compradores.id;
+29 - Uma PK é um id que identifica um registro e uma FK é uma ligação com outro registro.
+30 - Definindo uma FK.
+    ALTER TABLE compras ADD FOREIGN KEY (comprador_id) REFERENCES compradores(id);
