@@ -38,3 +38,6 @@
     ALTER TABLE compras ADD COLUMN forma_pagt ENUM('cartao', 'boleto', 'dinheiro');
 21 - O comando CHANGE pode ser usado para renomear uma coluna.
     ALTER TABLE compras CHANGE forma_pagt forma_pagamento ENUM('CARTAO', 'BOLETO', 'DINHEIRO');
+22 - Para ver as colunas de uma tabela use o DESC.
+    DESC compras;
+23 - Para comparar com nulo vc não usa o "=", mas sim a palavra IS.
