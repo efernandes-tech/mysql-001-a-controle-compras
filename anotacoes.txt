@@ -41,3 +41,11 @@
 22 - Para ver as colunas de uma tabela use o DESC.
     DESC compras;
 23 - Para comparar com nulo vc não usa o "=", mas sim a palavra IS.
+24 - Somar todos os valores de uma coluna, agrupando as recebidas e ordenando.
+    SELECT SUM(valor), recebido FROM compras GROUP BY recebido ORDER BY data DESC, recebido ASC;
+25 - Exibir a média dos valores de uma coluna e dando um apelido com AS.
+    SELECT AVG(valor) AS media FROM compras;
+26 - Contar o numero de pagamentos.
+    SELECT COUNT(valor) FROM compras;
+27 - Para pegar o mes ou o ano de uma data.
+    SELECT month(data), year(data) FROM compras;
